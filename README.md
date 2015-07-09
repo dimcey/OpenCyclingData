@@ -5,3 +5,4 @@ With the help of this data, the city, municipality or region could maintain and 
 The user just needs to run a mobile application while he is biking to track the route. The tracked routes will then be sent to the server. The anonymously gathered data will be accessible via an open REST API.
 
 This project was developed as part of the CodeCamp "Open Data and Green IT" in Spring 2015 at Lappeenranta University of Technology.
+The official link for the project on the CodeCamp website: http://codecamp.fi/doku.php/opendata2015/group3/start
