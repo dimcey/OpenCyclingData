@@ -1,0 +1,179 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context="com.websmithing.gpstracker.GpsTrackerActivity" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal" >
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/red_tracking_button"
+            android:text="@string/tracking_is_off"
+            android:id="@+id/trackingButton"
+            android:layout_weight="1"
+            android:height="50dip" />
+    </LinearLayout>
+
+    <TabHost
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:id="@+id/tabHost2"
+       >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:orientation="vertical">
+
+            <TabWidget
+                android:id="@android:id/tabs"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"></TabWidget>
+
+            <FrameLayout
+                android:id="@android:id/tabcontent"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent">
+
+                <LinearLayout
+                    android:id="@+id/Track"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:orientation="vertical">
+
+                    <RadioGroup
+                        android:id="@+id/intervalRadioGroup"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:layout_below="@+id/lblInterval"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true"
+                        android:layout_marginTop="100dp"
+                        android:layout_marginBottom="10dp">
+                        <RadioButton
+                            android:id="@+id/i1"
+                            android:checked="true"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/one_minute"
+                            android:visibility="invisible">
+                        </RadioButton>
+                        <Button
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Upload data to server"
+                            android:layout_gravity="center"
+                            android:id="@+id/UploadButton" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="?android:attr/textAppearanceMedium"
+                            android:text="Distance Covered: "
+                            android:id="@+id/distance" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="?android:attr/textAppearanceMedium"
+                            android:text="Time Elapsed:"
+                            android:id="@+id/starttimer" />
+
+                    </RadioGroup>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/Import"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:orientation="vertical">
+
+                    <EditText
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:inputType="textUri"
+                        android:id="@+id/txtWebsite"
+                        android:layout_marginTop="20dp"
+                        android:hint="@string/upload_website"
+                        android:visibility="invisible"
+                        />
+
+                    <EditText
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:inputType="textPersonName"
+                        android:ems="10"
+                        android:id="@+id/txtUserName"
+                        android:layout_gravity="top"
+                        android:hint="@string/user_name" />
+
+
+                    <EditText
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:inputType="textUri"
+                        android:id="@+id/password"
+                        android:hint="password"
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:text="Retreive data from external applications"
+                        android:id="@+id/textView"  />
+
+                    <Button
+                        style="?android:attr/buttonStyleSmall"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="RunKeeper"
+                        android:id="@+id/button" />
+
+                    <Button
+                        style="?android:attr/buttonStyleSmall"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Nike+"
+                        android:id="@+id/button2"
+                        android:layout_gravity="center_horizontal" />
+
+                    <Button
+                        style="?android:attr/buttonStyleSmall"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Strava"
+                        android:id="@+id/button3"
+                        android:layout_gravity="right" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/History"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:orientation="vertical">
+
+                    <ListView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/listView" />
+
+                </LinearLayout>
+            </FrameLayout>
+        </LinearLayout>
+    </TabHost>
+
+
+</RelativeLayout>
